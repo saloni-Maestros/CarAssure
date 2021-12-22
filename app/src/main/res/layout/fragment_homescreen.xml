@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bghomebr"
+    tools:context=".Fragment.HomescreenFragment">
+    <ImageView
+        android:id="@+id/img_menu"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:src="@drawable/menu"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ttext_ll"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Looking For \n A Car ?"
+            android:gravity="center"
+            android:textSize="25dp"
+            android:textColor="@color/white" />
+    </LinearLayout>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mt_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ttext_ll"
+        android:layout_marginEnd="25dp"
+        android:layout_marginStart="25dp"
+        app:cardCornerRadius="25dp"
+        android:elevation="2dp"
+        android:layout_marginTop="15dp">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchview"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:paddingStart="10dp"/>
+
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tablayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_below="@+id/mt_search"
+        android:layout_marginTop="18dp"
+        app:tabTextColor="@color/blue"
+        android:weightSum="3"
+        android:elevation="10dp"
+        app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+        app:tabIndicatorHeight="4dp"
+        app:tabIndicatorColor="@color/red">
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tablayout1"
+        android:background="@color/white">
+
+    </androidx.viewpager.widget.ViewPager>
+
+</RelativeLayout>

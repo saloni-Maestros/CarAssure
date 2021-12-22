@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgraound"
+    tools:context=".Activity.SignUpActivity">
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:layout_width="300dp"
+            android:layout_height="170dp"
+            android:layout_gravity="center"
+            android:src="@drawable/logo"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SIGN UP"
+            android:textSize="32dp"
+            android:layout_marginTop="6dp"
+            android:layout_gravity="center"
+            android:textColor="@color/blue" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User Type"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="45dp"
+            android:textColor="@color/blue"
+            android:textSize="18dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/blue"
+            android:background="@drawable/shape"
+            android:layout_marginEnd="30dp">
+
+            <Spinner
+                android:id="@+id/spin"
+                android:layout_width="match_parent"
+                android:layout_marginEnd="10dp"
+                android:layout_height="match_parent"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User Name"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="45dp"
+            android:textColor="@color/blue"
+            android:textSize="18dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape"
+            android:layout_marginEnd="30dp">
+
+            <EditText
+                android:id="@+id/edt_username"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:maxLength="20"
+                android:textColor="@color/blue"
+                android:hint="user name"
+                android:inputType="text"
+                android:background="@null"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Display Name"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="45dp"
+            android:textColor="@color/blue"
+            android:textSize="18dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape"
+            android:layout_marginEnd="30dp">
+
+            <EditText
+                android:id="@+id/edit_displayname"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:maxLength="20"
+                android:textColor="@color/blue"
+                android:hint="Entar Name"
+                android:inputType="text"
+                android:background="@null"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"/>
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="45dp"
+            android:textColor="@color/blue"
+            android:textSize="18dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape"
+            android:layout_marginEnd="30dp"
+            android:orientation="horizontal"
+            android:layout_height="60dp">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/mail"
+                android:layout_gravity="center"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="10dp"
+                />
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"/>
+
+            <EditText
+                android:id="@+id/edit_email"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:maxLength="20"
+                android:textColor="@color/blue"
+                android:inputType="textEmailAddress"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="20dp"
+                android:background="@null"
+                android:hint="Example@gmail.com"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Password"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="45dp"
+            android:textColor="@color/blue"
+            android:textSize="18dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape"
+            android:layout_marginEnd="30dp"
+            android:orientation="horizontal"
+            android:layout_height="60dp">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/lock"
+                android:layout_gravity="center"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="10dp"
+                />
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"/>
+
+            <EditText
+                android:id="@+id/edt_pwd"
+                android:layout_width="220dp"
+                android:layout_height="match_parent"
+                android:maxLength="20"
+                android:textColor="@color/blue"
+                android:layout_marginStart="4dp"
+                android:background="@null"
+                android:inputType="textPassword"
+                android:hint="*********"/>
+
+            <ImageView
+                android:id="@+id/showpassword"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/eyefill"
+                android:layout_gravity="center|end"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="10dp"
+                />
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/checkbox"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" I Agree To The Terms Of Servise"
+                android:textColor="@color/blue"/>
+
+        </LinearLayout>
+
+         <com.google.android.material.button.MaterialButton
+             android:id="@+id/mt_submit"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:text="SUBMIT"
+             android:layout_gravity="center"
+             android:layout_marginTop="10dp"
+             app:cornerRadius="10dp"
+             android:textColor="@color/white"
+             android:textSize="20dp"
+             android:layout_marginBottom="10dp"
+             android:backgroundTint="@color/blue"/>
+
+        <TextView
+            android:id="@+id/text_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:layout_gravity="center"
+            android:textSize="18dp"
+            android:textColor="@color/blue"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="30dp"/>
+
+
+    </LinearLayout>
+
+</ScrollView>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="50dp"
+        android:visibility="gone"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:indeterminateDrawable="@drawable/progressbar">
+    </ProgressBar>
+
+</RelativeLayout>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragment.SellFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/header_background"
+        android:id="@+id/relativefav">
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/leftarrow"
+            android:layout_marginTop="16dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sell"
+            android:textColor="@color/white"
+            android:layout_toRightOf="@+id/iv_back"
+            android:layout_marginStart="20dp"
+            android:textSize="22dp"
+            android:layout_marginTop="10dp"/>
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/Relativematerialbtn"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginEnd="3dp"
+        android:layout_below="@id/relativefav"
+        android:orientation="horizontal"
+        android:weightSum="5">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/mbtn_all"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="7dp"
+            android:layout_marginEnd="7dp"
+            android:padding="3dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/red"
+            android:text="All"
+            android:textSize="10dp"
+            android:textColor="@color/white"
+            app:cornerRadius="40dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/mbtn_live"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_vertical"
+            android:textSize="10dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/white"
+            android:text="Live"
+            android:textColor="@color/red"
+            app:cornerRadius="40dp" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/mbtn_processing"
+            android:layout_width="92dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_vertical"
+            android:textSize="10dp"
+            android:layout_marginStart="7dp"
+            android:layout_weight="1"
+            android:padding="3dp"
+            android:backgroundTint="@color/white"
+            android:text="processing"
+            android:textColor="@color/red"
+            app:cornerRadius="40dp" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/mbtn_Expired"
+            android:layout_width="70dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_vertical"
+            android:textSize="10dp"
+            android:layout_marginStart="7dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/white"
+            android:text="Expired"
+            android:textColor="@color/red"
+            app:cornerRadius="40dp" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/mbtn_Sold"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:textSize="10dp"
+            android:layout_marginStart="7dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/white"
+            android:text="Sold"
+            android:textColor="@color/red"
+            app:cornerRadius="40dp" />
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleViewAll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/Relativematerialbtn"
+        android:visibility="visible" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleViewLive"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/Relativematerialbtn"
+        android:visibility="gone" />
+
+
+    <RelativeLayout
+        android:id="@+id/relativelayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/Relativematerialbtn">
+
+        <ImageView
+            android:id="@+id/iv_addmore"
+            android:layout_width="70dp"
+            android:layout_height="60dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="40dp"
+            android:src="@drawable/addmore" />
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+      android:layout_centerInParent="true"
+        android:indeterminateDrawable="@drawable/progressbar"
+        android:visibility="gone">
+    </ProgressBar>
+</RelativeLayout>

@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragment.FavouriteCarFragment">
+
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="60dp"
+       android:background="@drawable/header_background"
+       android:id="@+id/relativefav">
+      <ImageView
+          android:id="@+id/iv_back"
+          android:layout_width="20dp"
+          android:layout_marginStart="20dp"
+          android:layout_height="20dp"
+          android:src="@drawable/leftarrow"
+          android:layout_marginTop="14dp"/>
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Favorites"
+          android:textColor="@color/white"
+         android:layout_toRightOf="@+id/iv_back"
+          android:layout_marginStart="20dp"
+          android:textSize="20dp"
+          android:layout_marginTop="10dp"/>
+   </RelativeLayout>
+   <androidx.recyclerview.widget.RecyclerView
+       android:id="@+id/recycler_favrouite"
+       android:layout_marginLeft="10dp"
+       android:layout_marginRight="10dp"
+       android:layout_marginTop="5dp"
+       android:layout_below="@+id/relativefav"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content" />
+   <ProgressBar
+       android:id="@+id/progressBar"
+       style="?android:attr/progressBarStyleLarge"
+       android:layout_width="50dp"
+       android:layout_height="50dp"
+       android:layout_centerHorizontal="true"
+       android:indeterminateDrawable="@drawable/progressbar"
+       android:visibility="gone">
+   </ProgressBar>
+
+
+
+<!--
+   <RelativeLayout
+       android:id="@+id/Relative_Header"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+      <ImageView
+         android:id="@+id/iv_back"
+          android:layout_width="20dp"
+          android:layout_height="20dp"
+         android:src="@drawable/leftarrow"
+         android:layout_marginTop="14dp"/>
+
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Favorites"
+          android:textColor="@color/white"
+          android:layout_marginStart="35dp"
+          android:textSize="20dp"
+          android:layout_marginTop="10dp"/>
+   </RelativeLayout>
+
+   <LinearLayout
+       android:id="@+id/RelativeLay"
+       android:layout_width="match_parent"
+       android:layout_below="@id/Relative_Header"
+       android:orientation="horizontal"
+       android:weightSum="2"
+       android:layout_height="match_parent">
+
+
+      <androidx.cardview.widget.CardView
+          android:layout_width="300dp"
+          android:layout_height="290dp"
+          android:layout_weight="1"
+          android:layout_marginTop="30dp"
+          app:cardCornerRadius="10dp"
+          android:layout_marginStart="15dp">
+         <RelativeLayout
+             android:id="@+id/relativefav2"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_car1"
+                android:layout_width="match_parent"
+                android:layout_height="137dp"
+               android:src="@drawable/tataharrier"/>
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/favret"
+                android:layout_marginTop="12dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp"/>
+
+            <TextView
+                android:id="@+id/tv_favcar1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginStart="7dp"
+                android:text="Tata Nexon"
+                android:textSize="16dp"
+                android:layout_below="@+id/iv_car1"
+                android:textStyle="bold" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_favcar1"
+                android:orientation="vertical">
+
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+
+                   android:orientation="horizontal">
+
+                  <ImageView
+                      android:layout_width="45dp"
+                      android:layout_height="30dp"
+                      android:src="@drawable/price" />
+
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="30dp"
+                      android:textColor="@color/black"
+                      android:gravity="center"
+                      android:text="1,500000/-"
+                      android:textStyle="bold" />
+
+               </LinearLayout>
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="2dp"
+                   android:orientation="horizontal">
+
+                  <ImageView
+                      android:layout_width="8dp"
+                      android:layout_height="8dp"
+                      android:layout_gravity="center_vertical"
+                      android:layout_marginStart="2dp"
+                      android:src="@drawable/locationsharp" />
+
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textColor="@color/blue"
+                      android:textSize="10dp"
+                      android:layout_marginTop="5dp"
+                      android:layout_marginStart="5dp"
+                      android:text="Mumbai"
+                      />
+                  <ImageView
+                      android:layout_width="8dp"
+                      android:layout_height="8dp"
+                      android:layout_gravity="center_vertical"
+                      android:layout_marginStart="7dp"
+                      android:src="@drawable/speedometer" />
+
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textColor="@color/blue"
+                      android:textSize="10dp"
+                      android:layout_marginTop="5dp"
+                      android:layout_marginStart="5dp"
+                      android:text="17,000 km" />
+                  <ImageView
+                      android:layout_width="8dp"
+                      android:layout_height="8dp"
+                      android:layout_gravity="center_vertical"
+                      android:layout_marginStart="7dp"
+                      android:src="@drawable/timesharp" />
+
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textColor="@color/blue"
+                      android:textSize="9dp"
+                      android:layout_marginTop="5dp"
+                      android:layout_marginStart="5dp"
+                      android:text="11/12/21"/>
+
+               </LinearLayout>
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="4dp"
+                   android:orientation="horizontal">
+
+                  <ImageView
+                      android:layout_width="6dp"
+                      android:layout_height="6dp"
+                      android:layout_gravity="center_vertical"
+                      android:layout_marginStart="2dp"
+
+                      android:src="@drawable/dot" />
+
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textColor="@color/blue"
+                      android:textSize="8dp"
+                      android:layout_gravity="center_vertical"
+                      android:layout_marginStart="5dp"
+                      android:text="Automatic"
+                      />
+                  <ImageView
+                      android:layout_width="6dp"
+                      android:layout_height="6dp"
+                      android:layout_gravity="center_vertical"
+                      android:layout_marginStart="5dp"
+                      android:src="@drawable/dot" />
+
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textColor="@color/blue"
+                      android:textSize="8dp"
+                      android:layout_gravity="center_vertical"
+                      android:layout_marginStart="5dp"
+                      android:text="Non Accidental" />
+                  <ImageView
+                      android:layout_width="6dp"
+                      android:layout_height="6dp"
+                      android:layout_gravity="center_vertical"
+                      android:layout_marginStart="5dp"
+                      android:src="@drawable/dot" />
+
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textColor="@color/blue"
+                      android:textSize="8dp"
+                      android:layout_marginTop="3dp"
+                      android:layout_gravity="center_vertical"
+                      android:layout_marginStart="5dp"
+                      android:text="MH 01 43441"/>
+
+               </LinearLayout>
+               <com.google.android.material.button.MaterialButton
+                   android:id="@+id/btn_placebid"
+                   android:layout_width="wrap_content"
+                   android:layout_height="40dp"
+                   android:layout_marginTop="8dp"
+                   android:backgroundTint="@color/blue"
+                   android:textSize="12dp"
+                   android:layout_gravity="center_horizontal|bottom"
+                   android:text="place bid"/>
+            </LinearLayout>
+         </RelativeLayout>
+
+      </androidx.cardview.widget.CardView>-->
+
+
+
+
+
+
+
+
+
+</RelativeLayout>

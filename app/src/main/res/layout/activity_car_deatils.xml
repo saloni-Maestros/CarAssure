@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundpiv"
+    tools:context=".Activity.CarDeatilsActivity">
+    <RelativeLayout
+        android:id="@+id/Relative_Header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/leftarrow"
+            android:layout_marginTop="14dp"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Deatils"
+            android:textColor="@color/white"
+            android:layout_marginStart="45dp"
+            android:textSize="20dp"
+            android:layout_marginTop="10dp"/>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/Relative_Header">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rel1"
+        android:layout_width="match_parent"
+        android:layout_below="@id/Relative_Header"
+        android:layout_height="280dp">
+
+        <com.smarteist.autoimageslider.SliderView
+          android:id="@+id/img_slider"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            app:sliderAnimationDuration="600"
+            app:sliderAutoCycleDirection="back_and_forth"
+            app:sliderAutoCycleEnabled="true"
+            android:layout_marginTop="12dp"
+            app:sliderIndicatorAnimationDuration="600"
+            app:sliderIndicatorGravity="center_horizontal|bottom"
+            app:sliderIndicatorMargin="15dp"
+            app:sliderIndicatorOrientation="horizontal"
+            app:sliderIndicatorPadding="3dp"
+            app:sliderIndicatorRadius="2dp"
+            app:sliderIndicatorSelectedColor="#FF0000"
+            app:sliderIndicatorUnselectedColor="#081D31"
+            app:sliderScrollTimeInSec="2"
+            app:sliderStartAutoCycle="true" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_carName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rel1"
+     android:layout_gravity="center_horizontal"
+        android:text="Scarpio"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:textSize="25dp"
+        android:textColor="@color/black"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_carName"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="55dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/price" />
+
+                <TextView
+                    android:id="@+id/tv_carprice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:text="1,500000/-"
+                    android:layout_marginStart="7dp"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:weightSum="3"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="20dp"
+                        android:src="@drawable/locationsharp" />
+
+                    <TextView
+                        android:id="@+id/tv_location1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:text="Mumbai"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/speedometer" />
+
+                    <TextView
+                    android:id="@+id/tv_km1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:text="17,000 km" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="15dp"
+                        android:src="@drawable/timesharp" />
+
+                    <TextView
+                        android:id="@+id/tv_model1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginStart="5dp"
+                        android:text="11/12/21"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:weightSum="3"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center_vertical"
+               android:src="@drawable/auto"
+                        android:layout_marginStart="20dp" />
+
+                    <TextView
+                        android:id="@+id/tv_automatice1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:text="Automatic"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/nonaccendital" />
+
+                    <TextView
+                        android:id="@+id/tv_nonAccidental1"
+                        android:layout_width="210dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="5dp"
+                        android:text="Non Accidental" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="15dp"
+                        android:src="@drawable/machine" />
+
+                    <TextView
+                        android:id="@+id/tv_carno1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginStart="5dp"
+                        android:text="MH 01 44844"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:weightSum="3"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/fuel"
+                        android:layout_marginStart="20dp" />
+
+                    <TextView
+                        android:id="@+id/tv_fueltype"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:text="Fuel Type"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="14dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/seater" />
+
+                    <TextView
+                        android:id="@+id/tv_seter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="5dp"
+                        android:text="5 serter" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/fuel2" />
+
+                    <TextView
+                        android:id="@+id/tv_kmpl"
+                        android:layout_width="220dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginStart="5dp"
+                        android:text="17.7 To 25Kmpl"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/time"
+                        android:layout_marginStart="20dp" />
+
+                    <TextView
+                        android:id="@+id/tv_cc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:text="778 To 1500Cc"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/rel1"
+            android:layout_marginTop="10dp"
+            android:background="@color/Grey" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_summary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Car Summary"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/blue"
+                android:layout_marginStart="15dp"
+                android:textSize="18dp"/>
+            <TextView
+                android:id="@+id/tv_Damage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Damages"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/blue"
+                android:layout_marginStart="15dp"
+                android:textSize="18dp"/>
+            <TextView
+                android:id="@+id/tv_NonAccidental"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Non Accidental Car"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/blue"
+                android:layout_marginStart="15dp"
+                android:textSize="14dp"/>
+            <TextView
+                android:id="@+id/tv_CluchFunction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cluch Function"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/blue"
+                android:layout_marginStart="15dp"
+                android:textSize="18dp"/>
+            <TextView
+                android:id="@+id/tv_Hard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hard"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/blue"
+                android:layout_marginStart="15dp"
+                android:textSize="14dp"/>
+            <TextView
+                android:id="@+id/tv_BreakFunction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Break Function"
+                android:layout_marginTop="17dp"
+                android:textColor="@color/blue"
+                android:layout_marginStart="15dp"
+                android:textSize="18dp"/>
+            <TextView
+                android:id="@+id/tv_Ok"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ok"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/blue"
+                android:layout_marginStart="15dp"
+                android:textSize="14dp"/>
+            <TextView
+                android:id="@+id/tv_BreakCondition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Break Condition Summary"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/blue"
+                android:layout_marginStart="15dp"
+                android:textSize="18dp"/>
+            <TextView
+                android:id="@+id/tv_Ok1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ok"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/blue"
+                android:layout_marginStart="15dp"
+                android:textSize="14dp"/>
+
+            <TextView
+                android:id="@+id/tv_Special"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Special Features Summary"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/blue"
+                android:layout_marginStart="15dp"
+                android:textSize="18dp"/>
+
+            <TextView
+                android:id="@+id/tv_dec"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Music System, Power Window Power Steering,\n ABS Defogger, Airbages"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/blue"
+                android:layout_marginStart="15dp"
+                android:textSize="14dp"/>
+
+            <TextView
+                android:id="@+id/tv_Engine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Engine Leak Summary"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/blue"
+                android:layout_marginStart="15dp"
+                android:textSize="18dp"/>
+
+            <TextView
+                android:id="@+id/tv_Ok2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ok"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/blue"
+                android:layout_marginStart="15dp"
+                android:textSize="14dp"/>
+
+            <TextView
+                android:id="@+id/tv_Air"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Air Conditioning"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/blue"
+                android:layout_marginStart="15dp"
+                android:textSize="18dp"/>
+
+            <TextView
+                android:id="@+id/tv_Ok3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ok"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/blue"
+                android:layout_marginStart="15dp"
+                android:textSize="14dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mbtn_placebid"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:backgroundTint="@color/blue"
+                android:text="Place A Bid">
+
+            </com.google.android.material.button.MaterialButton>
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/mbtn_placebid"
+               android:layout_gravity="center_horizontal"
+                android:indeterminateDrawable="@drawable/progressbar"
+                android:visibility="gone">
+            </ProgressBar>
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
+
+
+
+</RelativeLayout>

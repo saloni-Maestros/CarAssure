@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_bid"
+        android:icon="@drawable/bid1"
+        android:title="Bid">
+
+    </item>
+    <item
+        android:id="@+id/nav_sell"
+        android:icon="@drawable/sell"
+        android:title="Sell">
+
+    </item>
+    <item
+        android:id="@+id/nav_profile"
+        android:icon="@drawable/person"
+        android:title="Profile">
+
+    </item>
+    <item
+        android:id="@+id/nav_favourite"
+        android:icon="@drawable/favourite"
+        android:title="Favourite">
+
+    </item>
+
+
+</menu>
