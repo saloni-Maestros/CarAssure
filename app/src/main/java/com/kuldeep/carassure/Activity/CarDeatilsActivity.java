@@ -35,6 +35,7 @@ public class CarDeatilsActivity extends AppCompatActivity {
     ImageView iv_back;
     String car_id = "";
     String ID = "";
+
     public SliderAdapterExample sliderAdapter;
     private SliderView sliderView;
     ArrayList<SliderModel> sliderModels;

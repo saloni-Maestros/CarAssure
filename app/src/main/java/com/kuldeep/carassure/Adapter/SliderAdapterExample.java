@@ -32,13 +32,10 @@ public class SliderAdapterExample  extends SliderViewAdapter <SliderAdapterExamp
     @Override
     public void onBindViewHolder(SliderAdapterExample.SliderAdapterVH viewHolder, int position) {
         final  SliderModel sliderModel=sliderModels.get(position);
-
         Log.e("sliderModels : ", sliderModels.size() + " ");
 
         if (!sliderModel.equals("")){
-
             Glide.with(context).load(sliderModel.getPath()+sliderModel.getImage()).into(viewHolder.imglogo);
-
         }
 
 

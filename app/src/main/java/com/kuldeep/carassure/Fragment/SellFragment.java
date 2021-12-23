@@ -21,6 +21,7 @@ import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONArrayRequestListener;
 import com.google.android.material.button.MaterialButton;
 import com.kuldeep.carassure.Activity.HomeActivity;
+import com.kuldeep.carassure.Adapter.MultipleImageAdapter;
 import com.kuldeep.carassure.Adapter.SellAdapter;
 import com.kuldeep.carassure.Model.SellModel;
 import com.kuldeep.carassure.R;
@@ -38,9 +39,12 @@ public class SellFragment extends Fragment {
     MaterialButton mbtn_all, mbtn_live, mbtn_processing, mbtn_Expired, mbtn_Sold;
     ImageView iv_addmore, iv_back;
     ProgressBar progressBar;
+
     RecyclerView recycleViewAll, recycleViewLive;
     ArrayList<SellModel> sellModelArrayList;
     SellAdapter sellAdapter;
+
+    MultipleImageAdapter multipleImageAdapter;
     String User_Id = "";
 
     @Override
@@ -167,7 +171,6 @@ public class SellFragment extends Fragment {
         });
         User_Id = SharedHelper.getKey(getActivity(), APPCONSTANT.user_Id);
         Log.e("tytfytyu", User_Id);
-
         view_car();
         return view;
     }
@@ -175,7 +178,7 @@ public class SellFragment extends Fragment {
     public void view_car() {
         progressBar.setVisibility(View.VISIBLE);
         AndroidNetworking.post(Api.view_car)
-               // .addBodyParameter("user_id",User_Id)
+                .addBodyParameter("user_id",User_Id)
                 .setTag("view_car")
                 .setPriority(Priority.HIGH)
                 .build()
@@ -209,9 +212,10 @@ public class SellFragment extends Fragment {
                                     JSONObject jsonObject1 = jsonArray.getJSONObject(j);
                                     sellModel.setImage(jsonObject1.getString("image"));
                                     sellModel.setPath(jsonObject1.getString("path"));
-                                    sellModelArrayList.add(sellModel);
 
                                 }
+                                sellModelArrayList.add(sellModel);
+
                             }
                             recycleViewAll.setHasFixedSize(true);
                             recycleViewAll.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));

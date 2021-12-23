@@ -10,9 +10,12 @@ import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -22,6 +25,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,10 +37,17 @@ import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.google.android.material.button.MaterialButton;
+import com.jaiselrahman.filepicker.activity.FilePickerActivity;
+import com.jaiselrahman.filepicker.config.Configurations;
+import com.jaiselrahman.filepicker.model.MediaFile;
+import com.kuldeep.carassure.Adapter.ImageAdapter;
 import com.kuldeep.carassure.R;
 import com.kuldeep.carassure.other.APPCONSTANT;
 import com.kuldeep.carassure.other.Api;
 import com.kuldeep.carassure.other.SharedHelper;
+
+
+
 
 
 import org.json.JSONArray;
@@ -54,6 +65,8 @@ import java.util.List;
 import okhttp3.OkHttpClient;
 import okhttp3.Protocol;
 
+import static android.app.Activity.RESULT_OK;
+
 
 public class DeatilsListFragment extends Fragment {
  EditText et_Name,et_Price,et_Location,et_KmDriven,et_BuyDate,et_CarType,et_Damages,et_FuelType,et_Seats,et_Average,et_EngineCC,et_ClutchFunction,
@@ -63,12 +76,14 @@ TextView tv_uploadimg;
 Spinner Spinner_Cartype, Spinner_Damages;
 MaterialButton mbtn_post;
 String User_Id = "";
+ProgressBar progressBar;
 
     int PICK_IMAGE_MULTIPLE = 1;
     String imageEncoded;
     List<String> imagesEncodedList;
 
     private static final int REQUEST_CODE_CHOOSE = 23;
+    private final int FILE_REQUEST_CODE = 7777;
     private static final int SELECT_FILE1 = 1;
     private static final int SELECT_FILE2 = 2;
     String selectedPath1 = "NONE";
@@ -82,10 +97,19 @@ String User_Id = "";
     List<Uri> mSelected;
     File f;
 
+    RecyclerView recycler;
+    String filePath = "";
+
+    ArrayList<File> fileList = new ArrayList<>();
+    RecyclerView.LayoutManager layoutManager1;              //image adapter, recycler view
+    ImageAdapter adapter;
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view =  inflater.inflate(R.layout.fragment_deatils_list, container, false);
+        progressBar = view.findViewById(R.id.progressBar);
         mbtn_post = view.findViewById(R.id.mbtn_post);
         iv_back = view.findViewById(R.id.iv_back);
         iv_upload = view.findViewById(R.id.iv_upload);
@@ -111,6 +135,7 @@ String User_Id = "";
         et_SpecialFeatureSummary = view.findViewById(R.id.et_SpecialFeatureSummary);
         et_EngineLeakSummary = view.findViewById(R.id.et_EngineLeakSummary);
         et_AirConditions = view.findViewById(R.id.et_AirConditions);
+        recycler = view.findViewById(R.id.recycler);
         iv_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -121,6 +146,31 @@ String User_Id = "";
                 fragmentTransaction.commit();
             }
         });
+
+
+        iv_upload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                try {
+                    Intent intent = new Intent(getActivity(), FilePickerActivity.class);
+                    intent.putExtra(FilePickerActivity.CONFIGS, new Configurations.Builder()
+                            .setCheckPermission(true)
+                            .setShowImages(true)
+                            .setShowVideos(true)
+                            .enableImageCapture(true)
+                            .setMaxSelection(8)
+                            .setSkipZeroSizeFiles(true)
+                            .build());
+                    startActivityForResult(intent, FILE_REQUEST_CODE);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+
+            }
+        });
+/*
         iv_upload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -135,10 +185,11 @@ String User_Id = "";
 
             }
         });
+*/
         mbtn_post.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                add_car();
+                add_car(fileList);
             }
         });
         User_Id = SharedHelper.getKey(getActivity(), APPCONSTANT.user_Id);
@@ -148,7 +199,61 @@ String User_Id = "";
         return view;
 
     }
+
+
     @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == FILE_REQUEST_CODE && resultCode == RESULT_OK && data != null) {
+
+            List<MediaFile> mediaFiles = data.getParcelableArrayListExtra(FilePickerActivity.MEDIA_FILES);
+
+            if (mediaFiles.size() < 0) {
+
+                iv_upload.setVisibility(View.VISIBLE);
+
+            } else {
+                iv_upload.setVisibility(View.GONE);
+            }
+
+            if (mediaFiles != null) {
+
+                for (int i = 0; i < mediaFiles.size(); i++) {
+
+                    filePath = mediaFiles.get(i).getPath();
+
+                    File file = new File(filePath);
+                    fileList.add(file);
+
+                }
+/*
+                btn_post.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        String strCaption = edtCaption.getText().toString().trim();
+                        if (strCaption.equals("")) {
+                            Toast.makeText(getActivity(), "please enter caption", Toast.LENGTH_SHORT).show();
+                        } else {
+                            addProduct(fileList, strCaption);
+                        }
+
+                    }
+                });
+*/
+
+                adapter = new ImageAdapter(fileList, getActivity());
+                layoutManager1 = new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, true);
+                recycler.setLayoutManager(layoutManager1);
+                recycler.setAdapter(adapter);
+
+
+            }
+        }
+
+    }
+   /* @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
 
         try {
@@ -198,7 +303,7 @@ String User_Id = "";
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
-
+*/
   /*  public void showPictureDialog() {
         androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(getContext());
         builder.setTitle("Select Action");
@@ -296,7 +401,8 @@ String User_Id = "";
         return "";
     }*/
 
-    public void add_car(){
+    public void add_car(ArrayList<File> fileList){
+        progressBar.setVisibility(View.VISIBLE);
         Log.e("fgfggb", f +"");
         AndroidNetworking.initialize(getContext());
         OkHttpClient okHttpClient = new OkHttpClient().newBuilder().protocols(Arrays.asList(Protocol.HTTP_1_1)).build();
@@ -320,13 +426,14 @@ String User_Id = "";
                 .addMultipartParameter("special_feature_summary",et_SpecialFeatureSummary.getText().toString().trim())
                 .addMultipartParameter("engine_leak_summary",et_EngineLeakSummary.getText().toString().trim())
                 .addMultipartParameter("air_conditioning",et_AirConditions.getText().toString().trim())
-                .addMultipartFile("image", f)
+                .addMultipartFileList("image[]", fileList)
                 .setTag("add_car")
                 .setPriority(Priority.HIGH)
                 .build()
                 .getAsJSONObject(new JSONObjectRequestListener() {
                     @Override
                     public void onResponse(JSONObject response) {
+                        progressBar.setVisibility(View.GONE);
                         Log.e("jkdmcsjdksd", "onResponse: " +response.toString());
                  try {
                      if (response.getString("message").equals("Added Successfully")){
@@ -358,18 +465,17 @@ String User_Id = "";
                                      .diskCacheStrategy(DiskCacheStrategy.ALL).into(iv_upload);
                          }
 
-                      /*   FragmentManager fragmentManager = getFragmentManager();
+                         FragmentManager fragmentManager = getFragmentManager();
                          FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                          SellFragment NAME = new SellFragment();    //jis fragment me jana hai
                          fragmentTransaction.replace(R.id.item_container, NAME);
                          fragmentTransaction.commit();
-*/
                      } else {
                          Toast.makeText(getContext(), ""+response.getString("message"), Toast.LENGTH_SHORT).show();
-
                      }
 
                  } catch (Exception e){
+                     progressBar.setVisibility(View.GONE);
                      Log.e("jvjmkvf", "onResponse: " +e.getMessage());
 
                  }
@@ -378,6 +484,7 @@ String User_Id = "";
 
                     @Override
                     public void onError(ANError anError) {
+                        progressBar.setVisibility(View.GONE);
                         Log.e("jhnjnhcdj", "onError: " +anError);
 
                     }
