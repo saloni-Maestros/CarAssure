@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bghomebr"
+    android:background="@drawable/newbg"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragment.BidFragment">
 
@@ -26,7 +26,7 @@
             android:layout_marginTop="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Looking For \n A Car ?"
+            android:text="Looking For  A Car ?"
             android:gravity="center"
             android:textSize="25dp"
             android:textColor="@color/white" />
@@ -61,12 +61,12 @@
         android:background="@color/white"
         android:layout_below="@+id/mt_search"
         android:layout_marginTop="18dp"
-        app:tabTextColor="@color/red"
+        app:tabTextColor="@color/splashcolor"
         android:weightSum="3"
         android:elevation="10dp"
         app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
         app:tabIndicatorHeight="4dp"
-        app:tabIndicatorColor="@color/red">
+        app:tabIndicatorColor="@color/splashcolor">
 
     </com.google.android.material.tabs.TabLayout>
 

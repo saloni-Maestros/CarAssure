@@ -35,7 +35,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationBarView
     public static DrawerLayout drawerlayout;
     NavigationView navigationView;
 TabLayout tablayout1;
-    LinearLayout ll_call,ll_Conditions,ll_policies,ll_logout;
+    LinearLayout ll_call,ll_Conditions,ll_policies,ll_logout, ll_chngepass;
     BottomNavigationView bottomNavigation;
 
     @Override
@@ -50,11 +50,13 @@ TabLayout tablayout1;
         ll_call = findViewById(R.id.ll_call);
         ll_Conditions = findViewById(R.id.ll_Conditions);
         ll_policies = findViewById(R.id.ll_policies);
+        ll_chngepass = findViewById(R.id.ll_chngepass);
         ll_logout = findViewById(R.id.ll_logout);
 
         ll_call.setOnClickListener(this);
         ll_Conditions.setOnClickListener(this);
         ll_policies.setOnClickListener(this);
+        ll_chngepass.setOnClickListener(this);
         ll_logout.setOnClickListener(this);
 
         bottomNavigation=findViewById(R.id.bottomNavigation);
@@ -74,8 +76,8 @@ TabLayout tablayout1;
                     builder = new AlertDialog.Builder(HomeActivity.this);
                 }
                 builder.setTitle(getResources().getString(R.string.app_name))
-                        .setMessage("Are you sure you want to logout in the app")
-                        .setPositiveButton(Html.fromHtml("<font color='#E50000'>Ok</font>"), new DialogInterface.OnClickListener() {
+                        .setMessage("Are you sure you want to logout in this app")
+                        .setPositiveButton(Html.fromHtml("<font color='#0E0E4C'>Ok</font>"), new DialogInterface.OnClickListener() {
                             @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
                             public void onClick(final DialogInterface dialog, int which) {
                                 SharedHelper.putkey(HomeActivity.this, APPCONSTANT.user_Id,"");
@@ -88,12 +90,12 @@ TabLayout tablayout1;
                                 startActivity(intent);
                             }
                         })
-                        .setNegativeButton(Html.fromHtml("<font color='#E50000'>Cancel</font>"), new DialogInterface.OnClickListener() {
+                        .setNegativeButton(Html.fromHtml("<font color='#0E0E4C'>Cancel</font>"), new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
                                 dialog.dismiss();
                             }
                         })
-                       // .setIcon(R.drawable.ic_twotone_power_settings_new_24)
+                     .setIcon(R.drawable.bluelogout)
                         .show();
             }
         });
@@ -114,6 +116,12 @@ TabLayout tablayout1;
                 startActivity(new Intent(HomeActivity.this, TermsConditionActivity.class));
                 drawerlayout.closeDrawer(GravityCompat.START);
                 break;
+
+            case R.id.ll_chngepass:
+                startActivity(new Intent(HomeActivity.this, ChangePasswordActivity.class));
+                drawerlayout.closeDrawer(GravityCompat.START);
+                break;
+
 
             case R.id.ll_policies:
                 startActivity(new Intent(HomeActivity.this,PoliciesActivity.class));

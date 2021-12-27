@@ -46,7 +46,7 @@ public class SplashScreenActivity extends Activity {
                             @Override
                             public void run() {
                                 if (USERID.equals("")){
-                                    Intent intent = new Intent(SplashScreenActivity.this, SplashsecondActivity.class);
+                                    Intent intent = new Intent(SplashScreenActivity.this, LoginActivity.class);
                                     startActivity(intent);
                                     finish();
                                 }else {

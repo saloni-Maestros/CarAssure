@@ -80,7 +80,7 @@ public class LatestBidAdapter extends RecyclerView.Adapter<LatestBidAdapter.MyVi
                     SharedHelper.putkey(context, APPCONSTANT.ID, latestBidModel.getId());
                     Log.e("vfvfvbbgb", latestBidModel.getFavourite());
                     Log.e("rtgtdgdfgfg", latestBidModel.getId());
-                    Intent intent = new Intent(context, CarDeatilsActivity.class);  //adapter to activity
+                        Intent intent = new Intent(context, CarDeatilsActivity.class);  //adapter to activity
                     intent.putExtra("your_extra", "your_class_value");
                     context.startActivity(intent);
                 }
@@ -93,6 +93,8 @@ public class LatestBidAdapter extends RecyclerView.Adapter<LatestBidAdapter.MyVi
             holder.tv_automatice.setText(latestBidModel.getAutomatic());
             holder.tv_accidentail.setText(latestBidModel.getAccidental());
             holder.tv_carNo.setText(latestBidModel.getCar_number());
+            holder.tv_StartTime.setText(latestBidModel.getStart_time());
+            holder.tv_EndTime.setText(latestBidModel.getEnd_time());
         }
 
 
@@ -129,7 +131,7 @@ public class LatestBidAdapter extends RecyclerView.Adapter<LatestBidAdapter.MyVi
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         ImageView imgCars, like, likered;
-        TextView tv_name, tv_price, tv_location, tv_km, tv_modeldate, tv_automatice, tv_accidentail, tv_carNo;
+        TextView tv_name, tv_price, tv_location, tv_km, tv_modeldate, tv_automatice, tv_accidentail, tv_carNo,tv_StartTime,tv_EndTime;
         MaterialButton btn_placebid;
         RelativeLayout rlMain;
 
@@ -148,6 +150,9 @@ public class LatestBidAdapter extends RecyclerView.Adapter<LatestBidAdapter.MyVi
             imgCars = itemView.findViewById(R.id.imgCars);
             like = itemView.findViewById(R.id.like);
             likered = itemView.findViewById(R.id.likered);
+            tv_EndTime = itemView.findViewById(R.id.tv_EndTime);
+            tv_StartTime = itemView.findViewById(R.id.tv_StartTime);
+
 
         }
     }

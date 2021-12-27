@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgraound"
+
     tools:context=".Activity.SignUpActivity">
 
 <ScrollView
@@ -31,12 +31,12 @@
             android:textSize="32dp"
             android:layout_marginTop="6dp"
             android:layout_gravity="center"
-            android:textColor="@color/blue" />
+            android:textColor="@color/splashcolor" />
 
-        <TextView
+      <!--  <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="User Type"
+            android:text="Mobile Number"
             android:layout_marginTop="20dp"
             android:layout_marginStart="45dp"
             android:textColor="@color/blue"
@@ -56,8 +56,7 @@
                 android:layout_width="match_parent"
                 android:layout_marginEnd="10dp"
                 android:layout_height="match_parent"/>
-
-        </RelativeLayout>
+        </RelativeLayout>-->
 
         <TextView
             android:layout_width="wrap_content"
@@ -65,7 +64,7 @@
             android:text="User Name"
             android:layout_marginTop="20dp"
             android:layout_marginStart="45dp"
-            android:textColor="@color/blue"
+            android:textColor="@color/splashcolor"
             android:textSize="18dp"/>
 
         <RelativeLayout
@@ -93,10 +92,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Display Name"
+            android:text="Mobile Number"
             android:layout_marginTop="20dp"
             android:layout_marginStart="45dp"
-            android:textColor="@color/blue"
+            android:textColor="@color/splashcolor"
             android:textSize="18dp"/>
 
         <RelativeLayout
@@ -108,13 +107,13 @@
             android:layout_marginEnd="30dp">
 
             <EditText
-                android:id="@+id/edit_displayname"
+                android:id="@+id/edit_mob"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:maxLength="20"
+                android:maxLength="10"
                 android:textColor="@color/blue"
-                android:hint="Entar Name"
-                android:inputType="text"
+                android:hint="Entar Mobile Number"
+                android:inputType="number"
                 android:background="@null"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"/>
@@ -128,7 +127,7 @@
             android:text="Email"
             android:layout_marginTop="20dp"
             android:layout_marginStart="45dp"
-            android:textColor="@color/blue"
+            android:textColor="@color/splashcolor"
             android:textSize="18dp"/>
 
         <LinearLayout
@@ -157,7 +156,7 @@
                 android:id="@+id/edit_email"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:maxLength="20"
+                android:maxLength="80"
                 android:textColor="@color/blue"
                 android:inputType="textEmailAddress"
                 android:layout_marginStart="4dp"
@@ -173,7 +172,7 @@
             android:text="Password"
             android:layout_marginTop="20dp"
             android:layout_marginStart="45dp"
-            android:textColor="@color/blue"
+            android:textColor="@color/splashcolor"
             android:textSize="18dp"/>
 
         <LinearLayout
@@ -202,7 +201,7 @@
                 android:id="@+id/edt_pwd"
                 android:layout_width="220dp"
                 android:layout_height="match_parent"
-                android:maxLength="20"
+                android:maxLength="80"
                 android:textColor="@color/blue"
                 android:layout_marginStart="4dp"
                 android:background="@null"
@@ -218,11 +217,270 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="10dp"
                 />
-
         </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aadhaar Card No."
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="45dp"
+            android:textColor="@color/splashcolor"
+            android:textSize="18dp"/>
+
+        <RelativeLayout
+            android:id="@+id/reltive"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape"
+            android:layout_marginEnd="30dp">
+
+            <EditText
+                android:id="@+id/edt_adharcard"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:maxLength="12"
+                android:textColor="@color/blue"
+                android:hint="adhar card no."
+                android:inputType="number"
+                android:background="@null"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"/>
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/tv_uploadadharimg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Upload Aadhar photo"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="45dp"
+            android:textColor="@color/splashcolor"
+            android:textSize="18dp"/>
+        <RelativeLayout
+            android:id="@+id/rel_Front"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_height="120dp">
+            <TextView
+                android:id="@+id/tv_uploadfrontimg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Front Side"
+                android:layout_marginStart="45dp"
+                android:textColor="@color/black"
+                android:textSize="15dp"/>
+            <TextView
+                android:id="@+id/tv_FrontuploadBox"
+                android:layout_width="120dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="30dp"
+                android:layout_below="@+id/tv_uploadfrontimg"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/doted_file"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp" />
+            <ImageView
+                android:id="@+id/iv_FrontAdharupload"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="65dp"
+                android:layout_marginTop="50dp"
+                android:padding="5dp"
+                android:src="@drawable/upload" />
+
+            <TextView
+                android:id="@+id/tv_backfrontimg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Back Side"
+                android:layout_toRightOf="@+id/tv_uploadfrontimg"
+                android:layout_marginStart="100dp"
+                android:textColor="@color/black"
+                android:textSize="15dp"/>
+            <TextView
+                android:id="@+id/tv_BackuploadBox"
+                android:layout_width="120dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="30dp"
+                android:layout_below="@+id/tv_backfrontimg"
+                android:layout_toRightOf="@+id/tv_FrontuploadBox"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/doted_file"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp" />
+            <ImageView
+                android:id="@+id/iv_BackAdharupload"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_toRightOf="@+id/iv_FrontAdharupload"
+                android:layout_marginTop="55dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="10dp"
+                android:padding="5dp"
+                android:src="@drawable/upload" />
 
 
 
+        </RelativeLayout>
+
+
+        <!--  <TextView
+              android:id="@+id/tv_FrontuploadBox"
+              android:layout_width="120dp"
+              android:layout_height="100dp"
+              android:layout_marginStart="25dp"
+              android:layout_below="@+id/tv_frontSide"
+              android:layout_marginEnd="10dp"
+              android:background="@drawable/doted_file"
+              android:paddingStart="15dp"
+              android:paddingEnd="15dp" />
+  -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pan Card No."
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="45dp"
+            android:textColor="@color/splashcolor"
+            android:textSize="18dp"/>
+
+        <RelativeLayout
+            android:id="@+id/reltive1"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape"
+            android:layout_marginEnd="30dp">
+
+            <EditText
+                android:id="@+id/edt_Pancard"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:maxLength="20"
+                android:textColor="@color/blue"
+                android:hint="Pan card no."
+                android:inputType="number"
+                android:background="@null"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"/>
+
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/tv_pancarimg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Upload  Pan Card Image"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="45dp"
+            android:textColor="@color/splashcolor"
+            android:textSize="18dp"/>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_below="@+id/reltive"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/iv_Panupload"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="40dp"
+        android:padding="5dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/upload" />
+
+    <TextView
+        android:id="@+id/tv_uploadBox1"
+        android:layout_width="170dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="7dp"
+        android:background="@drawable/doted_file"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp" />
+
+</RelativeLayout>
+
+
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GST No."
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="45dp"
+            android:textColor="@color/splashcolor"
+            android:textSize="18dp"/>
+
+        <RelativeLayout
+            android:id="@+id/reltive2"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape"
+            android:layout_marginEnd="30dp">
+
+            <EditText
+                android:id="@+id/edt_GST"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:maxLength="20"
+                android:textColor="@color/blue"
+                android:hint="GST no."
+                android:inputType="number"
+                android:background="@null"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"/>
+
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/tv_GSTimg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Upload GST Image"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/reltive2"
+            android:layout_marginStart="45dp"
+            android:textColor="@color/splashcolor"
+            android:textSize="18dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_below="@+id/tv_GSTimg"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_uploadGst"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="55dp"
+                android:layout_marginTop="40dp"
+                android:padding="5dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/upload" />
+
+            <TextView
+                android:id="@+id/tv_uploadBox2"
+                android:layout_width="170dp"
+                android:layout_height="100dp"
+              android:layout_centerHorizontal="true"
+                android:layout_marginTop="7dp"
+                android:background="@drawable/doted_file"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp" />
+
+        </RelativeLayout>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -239,7 +497,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=" I Agree To The Terms Of Servise"
-                android:textColor="@color/blue"/>
+                android:textColor="@color/splashcolor"/>
 
         </LinearLayout>
 
@@ -254,7 +512,7 @@
              android:textColor="@color/white"
              android:textSize="20dp"
              android:layout_marginBottom="10dp"
-             android:backgroundTint="@color/blue"/>
+             android:backgroundTint="@color/splashcolor"/>
 
         <TextView
             android:id="@+id/text_login"
@@ -263,9 +521,10 @@
             android:text="Login"
             android:layout_gravity="center"
             android:textSize="18dp"
-            android:textColor="@color/blue"
+            android:textColor="@color/splashcolor"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="30dp"/>
+
 
 
     </LinearLayout>

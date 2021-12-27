@@ -9,7 +9,7 @@
         android:id="@+id/relTermAndCondition"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@drawable/header_background">
+        android:background="@drawable/newheaderbg">
 
         <ImageView
             android:id="@+id/imgBack"

@@ -28,7 +28,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:background="@color/blue"
+                android:background="@color/splashcolor"
+                app:labelVisibilityMode="labeled"
                 android:theme="@style/Animation.Design.BottomSheetDialog"
                 app:itemIconSize="25dp"
                 app:itemIconTint="@color/white"
@@ -60,14 +61,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:orientation="horizontal">
-
                         <ImageView
                             android:layout_width="25dp"
                             android:layout_height="25dp"
                             android:layout_gravity="center_vertical"
                             android:layout_marginLeft="10dp"
                             android:layout_marginStart="20dp"
-                            android:src="@drawable/call" />
+                            android:src="@drawable/blueca" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -75,7 +75,7 @@
                             android:layout_marginLeft="10dp"
                             android:gravity="center"
                             android:layout_gravity="center_vertical"
-                            android:textColor="@color/blue"
+                            android:textColor="@color/splashcolor"
                             android:text="Help"
                             android:textSize="17dp"
                             android:textStyle="bold" />
@@ -96,7 +96,7 @@
                             android:layout_gravity="center_vertical"
                             android:layout_marginLeft="10dp"
                             android:layout_marginStart="20dp"
-                            android:src="@drawable/policies" />
+                            android:src="@drawable/blueterms" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -104,7 +104,7 @@
                             android:layout_marginLeft="10dp"
                             android:gravity="center"
                             android:layout_gravity="center_vertical"
-                            android:textColor="@color/blue"
+                            android:textColor="@color/splashcolor"
                             android:text="Terms &amp; Conditions"
                             android:textSize="17dp"
                             android:textStyle="bold" />
@@ -125,7 +125,7 @@
                             android:layout_marginStart="20dp"
                             android:layout_gravity="center_vertical"
                             android:layout_marginLeft="10dp"
-                            android:src="@drawable/policies" />
+                            android:src="@drawable/bluepolicies" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -134,7 +134,34 @@
                             android:gravity="center"
                             android:text="Policies"
                             android:layout_gravity="center_vertical"
-                            android:textColor="@color/blue"
+                            android:textColor="@color/splashcolor"
+                            android:textSize="17dp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/ll_chngepass"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="10dp"
+                            android:src="@drawable/changepass" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="10dp"
+                            android:gravity="center"
+                            android:text="Change Password"
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/splashcolor"
                             android:textSize="17dp"
                             android:textStyle="bold" />
 
@@ -154,7 +181,7 @@
                             android:layout_marginStart="20dp"
                             android:layout_gravity="center_vertical"
                             android:layout_marginLeft="10dp"
-                            android:src="@drawable/logout"/>
+                            android:src="@drawable/bluelogout"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="30dp"
@@ -162,7 +189,7 @@
                             android:gravity="center"
                             android:text="Logout"
                             android:layout_gravity="center_vertical"
-                            android:textColor="@color/blue"
+                            android:textColor="@color/splashcolor"
                             android:textSize="17dp"
                             android:textStyle="bold" />
 

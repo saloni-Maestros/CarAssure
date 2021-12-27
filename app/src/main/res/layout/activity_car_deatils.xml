@@ -4,30 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroundpiv"
     tools:context=".Activity.CarDeatilsActivity">
     <RelativeLayout
         android:id="@+id/Relative_Header"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="60dp"
+        android:background="@drawable/newheaderbg">
 
         <ImageView
             android:id="@+id/iv_back"
             android:layout_width="20dp"
             android:layout_height="20dp"
+            android:layout_centerVertical="true"
             android:layout_marginStart="10dp"
-            android:src="@drawable/leftarrow"
-            android:layout_marginTop="14dp"/>
-
+            android:src="@drawable/leftarrow" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+         android:layout_marginStart="20dp"
+            android:layout_toRightOf="@+id/iv_back"
             android:text="Deatils"
             android:textColor="@color/white"
-            android:layout_marginStart="45dp"
             android:textSize="20dp"
-            android:layout_marginTop="10dp"/>
+            android:textStyle="bold" />
+
     </RelativeLayout>
 
     <ScrollView
@@ -53,14 +55,13 @@
             app:sliderAnimationDuration="600"
             app:sliderAutoCycleDirection="back_and_forth"
             app:sliderAutoCycleEnabled="true"
-            android:layout_marginTop="12dp"
             app:sliderIndicatorAnimationDuration="600"
             app:sliderIndicatorGravity="center_horizontal|bottom"
             app:sliderIndicatorMargin="15dp"
             app:sliderIndicatorOrientation="horizontal"
             app:sliderIndicatorPadding="3dp"
             app:sliderIndicatorRadius="2dp"
-            app:sliderIndicatorSelectedColor="#FF0000"
+            app:sliderIndicatorSelectedColor="@color/splashcolor"
             app:sliderIndicatorUnselectedColor="#081D31"
             app:sliderScrollTimeInSec="2"
             app:sliderStartAutoCycle="true" />
@@ -302,7 +303,7 @@
                         android:textSize="15dp"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="5dp"
-                        android:text="5 serter" />
+                        android:text="5 Seater" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -364,6 +365,7 @@
             android:background="@color/Grey" />
 
         <LinearLayout
+            android:id="@+id/L1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -399,7 +401,7 @@
                 android:id="@+id/tv_CluchFunction"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Cluch Function"
+                android:text="Clutch Function"
                 android:layout_marginTop="20dp"
                 android:textColor="@color/blue"
                 android:layout_marginStart="15dp"
@@ -514,20 +516,11 @@
                 android:id="@+id/mbtn_placebid"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:backgroundTint="@color/blue"
+                android:backgroundTint="@color/splashcolor"
                 android:text="Place A Bid">
 
             </com.google.android.material.button.MaterialButton>
-            <ProgressBar
-                android:id="@+id/progressBar"
-                style="?android:attr/progressBarStyleLarge"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_below="@+id/mbtn_placebid"
-               android:layout_gravity="center_horizontal"
-                android:indeterminateDrawable="@drawable/progressbar"
-                android:visibility="gone">
-            </ProgressBar>
+
 
 
 
@@ -537,6 +530,15 @@
 
 </ScrollView>
 
-
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+       android:layout_centerInParent="true"
+        android:layout_gravity="center_horizontal"
+        android:indeterminateDrawable="@drawable/progressbar"
+        android:visibility="gone">
+    </ProgressBar>
 
 </RelativeLayout>

@@ -18,8 +18,8 @@
         <gradient
             android:centerColor="@color/white"
             android:centerY="0.50"
-            android:endColor="@color/red"
-            android:startColor="@color/red"
+            android:endColor="@color/splashcolor"
+            android:startColor="@color/splashcolor"
             android:type="sweep"
             android:useLevel="false" />
     </shape>

@@ -170,22 +170,7 @@ ProgressBar progressBar;
 
             }
         });
-/*
-        iv_upload.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setAction(Intent.ACTION_SEND_MULTIPLE);
-                intent.setType("image/*");
-                intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
-                intent.setAction(Intent.ACTION_GET_CONTENT);
-                startActivityForResult(Intent.createChooser(intent,"Select Picture"), PICK_IMAGE_MULTIPLE);
 
-              //  showPictureDialog();
-
-            }
-        });
-*/
         mbtn_post.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -457,6 +442,7 @@ ProgressBar progressBar;
                          et_SpecialFeatureSummary.setText(jsonObject.getString("special_feature_summary"));
                          et_EngineLeakSummary.setText(jsonObject.getString("engine_leak_summary"));
                          et_AirConditions.setText(jsonObject.getString("air_conditioning"));
+                       //  SharedHelper.putkey(getContext(), APPCONSTANT.CAR_ID,jsonObject.getString("price"));
                          JSONArray jsonArray = new JSONArray(jsonObject.getString("image"));
                          for (int j = 0; j < jsonArray.length(); j++) {
                              JSONObject jsonObject1 = jsonArray.getJSONObject(j);
@@ -470,6 +456,13 @@ ProgressBar progressBar;
                          SellFragment NAME = new SellFragment();    //jis fragment me jana hai
                          fragmentTransaction.replace(R.id.item_container, NAME);
                          fragmentTransaction.commit();
+
+                         FragmentManager fragmentManager1 = getFragmentManager();
+                         FragmentTransaction fragmentTransaction1 = fragmentManager.beginTransaction();
+                         LatestFragment NAME1 = new LatestFragment();    //jis fragment me jana hai
+                         fragmentTransaction.replace(R.id.item_container, NAME);
+                         fragmentTransaction.commit();
+
                      } else {
                          Toast.makeText(getContext(), ""+response.getString("message"), Toast.LENGTH_SHORT).show();
                      }

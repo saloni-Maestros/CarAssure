@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/bghomebr"
+    android:background="@drawable/newbg"
     tools:context=".Fragment.HomescreenFragment">
     <ImageView
         android:id="@+id/img_menu"
@@ -23,7 +23,7 @@
             android:layout_marginTop="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Looking For \n A Car ?"
+            android:text="Looking For A Car ?"
             android:gravity="center"
             android:textSize="25dp"
             android:textColor="@color/white" />
@@ -58,7 +58,7 @@
         android:elevation="10dp"
         app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
         app:tabIndicatorHeight="4dp"
-        app:tabIndicatorColor="@color/red">
+        app:tabIndicatorColor="@color/splashcolor">
     </com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager.widget.ViewPager

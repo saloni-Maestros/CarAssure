@@ -51,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_gravity="center_horizontal"
-                android:backgroundTint="@color/blue"
+                android:backgroundTint="@color/splashcolor"
                 android:layout_marginTop="20dp"
                 android:text="Back To Home"
                 app:cornerRadius="15dp">

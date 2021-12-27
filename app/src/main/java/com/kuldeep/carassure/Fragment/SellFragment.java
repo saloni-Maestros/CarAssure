@@ -191,13 +191,12 @@ public class SellFragment extends Fragment {
                         try {
                             for (int i = 0; i < response.length(); i++) {
                                 JSONObject jsonObject = response.getJSONObject(i);
+
                                 SellModel sellModel = new SellModel();
+
                                 sellModel.setId(jsonObject.getString("id"));
-
-
                                 sellModel.setUser_id(jsonObject.getString("user_id"));
                                 Log.e("gbngvbn", jsonObject.getString("user_id"));
-
                                 sellModel.setName(jsonObject.getString("name"));
                                 sellModel.setPrice(jsonObject.getString("price"));
                                 sellModel.setLocation(jsonObject.getString("location"));
@@ -212,10 +211,8 @@ public class SellFragment extends Fragment {
                                     JSONObject jsonObject1 = jsonArray.getJSONObject(j);
                                     sellModel.setImage(jsonObject1.getString("image"));
                                     sellModel.setPath(jsonObject1.getString("path"));
-
                                 }
                                 sellModelArrayList.add(sellModel);
-
                             }
                             recycleViewAll.setHasFixedSize(true);
                             recycleViewAll.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));

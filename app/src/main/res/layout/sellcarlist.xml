@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:id="@+id/r2Main"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <com.google.android.material.card.MaterialCardView
@@ -212,7 +213,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
                         android:layout_marginTop="6dp"
-                        android:backgroundTint="@color/blue"
+                        android:backgroundTint="@color/splashcolor"
                         android:textSize="12dp"
                         android:textColor="@color/white"
                         android:layout_gravity="center_horizontal|bottom"

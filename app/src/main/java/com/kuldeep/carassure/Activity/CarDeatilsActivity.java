@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
@@ -35,6 +36,7 @@ public class CarDeatilsActivity extends AppCompatActivity {
     ImageView iv_back;
     String car_id = "";
     String ID = "";
+    String  User_Id = "",Car_Id = "";
 
     public SliderAdapterExample sliderAdapter;
     private SliderView sliderView;
@@ -72,19 +74,25 @@ public class CarDeatilsActivity extends AppCompatActivity {
 
         sliderView = findViewById(R.id.img_slider);
         sliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
+
         car_id = SharedHelper.getKey(CarDeatilsActivity.this, APPCONSTANT.car_id);
         ID = SharedHelper.getKey(CarDeatilsActivity.this, APPCONSTANT.ID);
         Log.e("gbgf", ID);
-
-
         Log.e("dfd", car_id);
+
+        User_Id = SharedHelper.getKey(CarDeatilsActivity.this,APPCONSTANT.user_Id);
+        Car_Id = SharedHelper.getKey(CarDeatilsActivity.this, APPCONSTANT.CAR_ID);
+        Log.e("hdjsdsdc",Car_Id );
+        Log.e("hdjsdsdc",User_Id );
+
 
 
         mbtn_placebid = findViewById(R.id.mbtn_placebid);
         mbtn_placebid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(CarDeatilsActivity.this,BidPriceActivity.class));
+                PlaceBid();
+               // startActivity(new Intent(CarDeatilsActivity.this,BidPriceActivity.class));
             }
         });
         iv_back = findViewById(R.id.iv_back);
@@ -100,6 +108,7 @@ public class CarDeatilsActivity extends AppCompatActivity {
     public void showCarDetails(){
         progressBar.setVisibility(View.VISIBLE);
         AndroidNetworking.post(Api.showCarDetails)
+                .addBodyParameter("user_id", User_Id)
                 .addBodyParameter("car_id", ID)
                 .setPriority(Priority.HIGH)
                 .setTag("showCarDetails")
@@ -168,6 +177,47 @@ public class CarDeatilsActivity extends AppCompatActivity {
 
                     }
                 });
+
+    }
+    public void  PlaceBid(){
+        progressBar.setVisibility(View.VISIBLE);
+        AndroidNetworking.post(Api.place_a_bid)
+                .addBodyParameter("user_id", User_Id)
+                .addBodyParameter("car_id" ,Car_Id)
+                .setTag("place_a_bid")
+                .setPriority(Priority.HIGH)
+                .build()
+                .getAsJSONObject(new JSONObjectRequestListener() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        progressBar.setVisibility(View.GONE);
+                        Log.e("shfjdfj", "onResponse: " +response.toString());
+                        try {
+                            if (response.getString("result").equals("bid placed success")){
+                                Toast.makeText(CarDeatilsActivity.this, ""+response.getString("result"), Toast.LENGTH_SHORT).show();
+                                tv_carprice.setText(response.getString("price"));
+                                JSONObject jsonObject = new JSONObject(response.getString("bid_detail"));
+                            }else {
+                                Toast.makeText(CarDeatilsActivity.this, ""+response.getString("result"), Toast.LENGTH_SHORT).show();
+
+                            }
+
+
+                        } catch (Exception e){
+                            progressBar.setVisibility(View.GONE);
+                            Log.e("xmxnmxcn", "onResponse: " +e.getMessage());
+
+                        }
+                    }
+
+                    @Override
+                    public void onError(ANError anError) {
+                        progressBar.setVisibility(View.GONE);
+                        Log.e("kxcnckcn", "onError: " +anError);
+
+                    }
+                });
+
 
     }
 }

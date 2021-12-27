@@ -52,7 +52,19 @@ public class LoginActivity extends Activity {
         summit_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                login();
+                if (edt_uname.getText().toString().trim().isEmpty()){
+                    Toast.makeText(LoginActivity.this, "please Enter Your Name", Toast.LENGTH_SHORT).show();
+                } else if(edit_email.getText().toString().trim().isEmpty()){
+                    Toast.makeText(LoginActivity.this, "please Enter Your Email", Toast.LENGTH_SHORT).show();
+                } else if (edt_pwd.getText().toString().trim().isEmpty()){
+                    Toast.makeText(LoginActivity.this, "please Enter Your Password", Toast.LENGTH_SHORT).show();
+                } else {
+                    login();
+
+                }
+
+
+
                 //startActivity(new Intent(LoginActivity.this,HomeActivity.class));
             }
         });

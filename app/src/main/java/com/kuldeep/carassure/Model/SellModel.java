@@ -1,6 +1,6 @@
 package com.kuldeep.carassure.Model;
 
-public class SellModel {
+public class  SellModel {
     String id = "", name = "", car_images_id = "", price = "", location = "", km_driven = "", model = "", automatic = "", accidental = "",
             car_number = "", image = "", path = "", user_id = "";
 

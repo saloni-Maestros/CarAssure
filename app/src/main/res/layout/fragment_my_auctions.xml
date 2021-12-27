@@ -20,7 +20,7 @@
             android:layout_marginEnd="10dp"
             android:text="Ongoing"
             android:layout_weight="1"
-            android:backgroundTint="@color/red"
+            android:backgroundTint="@color/splashcolor"
             android:textSize="12dp"
             android:textColor="@color/white"
             app:cornerRadius="40dp" />
@@ -33,13 +33,30 @@
             android:text="Past"
             android:layout_weight="1"
             android:textSize="12dp"
-            android:textColor="@color/red"
+            android:textColor="@color/splashcolor"
             app:cornerRadius="40dp" />
-
-
-
-
     </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerPast"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_below="@+id/linear_mbtn"
+        android:layout_width="match_parent"
+        android:visibility="visible"
+        android:layout_height="match_parent" />
+
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:indeterminateDrawable="@drawable/progressbar"
+        android:visibility="gone">
+    </ProgressBar>
 
 
 </RelativeLayout>

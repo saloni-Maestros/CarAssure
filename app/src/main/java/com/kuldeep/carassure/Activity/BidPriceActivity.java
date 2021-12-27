@@ -50,18 +50,11 @@ public class BidPriceActivity extends AppCompatActivity {
         iv_back = findViewById(R.id.iv_back);
         progressBar = findViewById(R.id.progressBar);
         mbtn_submit = findViewById(R.id.mbtn_submit);
-        et_price = findViewById(R.id.et_price);
+
         mbtn_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (et_price.getText().toString().trim().isEmpty()){
-
-
-                    Toast.makeText(BidPriceActivity.this, "please Enter your Bid Price", Toast.LENGTH_SHORT).show();
-                } else {
-                    PlaceBid();
-
-                }
+              //  PlaceBid();
             }
         });
         iv_back.setOnClickListener(new View.OnClickListener() {
@@ -72,8 +65,43 @@ public class BidPriceActivity extends AppCompatActivity {
         });
 
     }
+  /*    public void  PlaceBid(){
+        AndroidNetworking.post(Api.place_a_bid)
+                .addBodyParameter("user_id", User_Id)
+                .addBodyParameter("car_id" ,Car_Id)
+                .setTag("place_a_bid")
+                .setPriority(Priority.HIGH)
+                .build()
+                .getAsJSONObject(new JSONObjectRequestListener() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Log.e("shfjdfj", "onResponse: " +response.toString());
+                        try {
+                         if (response.getString("result").equals("bid placed success")){
+                             Toast.makeText(BidPriceActivity.this, ""+response.getString("result"), Toast.LENGTH_SHORT).show();
+                             JSONObject jsonObject = new JSONObject(response.getString("bid_detail"));
+                         }
 
-    public void PlaceBid(){
+
+                        } catch (Exception e){
+                            Log.e("xmxnmxcn", "onResponse: " +e.getMessage());
+
+
+
+                        }
+                    }
+
+                    @Override
+                    public void onError(ANError anError) {
+                        Log.e("kxcnckcn", "onError: " +anError);
+
+                    }
+                });
+
+
+      }*/
+
+  /*  public void PlaceBid(){
         progressBar.setVisibility(View.VISIBLE);
         AndroidNetworking.post(Api.placeBid)
            .addBodyParameter("user_id",User_Id)
@@ -91,7 +119,7 @@ public class BidPriceActivity extends AppCompatActivity {
                             if (response.getString("message").equals("Successfully Bid")){
                                 Toast.makeText(BidPriceActivity.this, ""+response.getString("message"), Toast.LENGTH_SHORT).show();
 
-                               // startActivity(new Intent(BidPriceActivity.this, SuccessfullyBidActivity.class));
+
                                 BottomSheetDialog bottomSheerDialog = new BottomSheetDialog(BidPriceActivity.this);
                                 View parentView = getLayoutInflater().inflate(R.layout.popup_successfully_bid,null);
                                 bottomSheerDialog.setContentView(parentView);
@@ -129,5 +157,5 @@ public class BidPriceActivity extends AppCompatActivity {
 
                     }
                 });
-    }
+    }*/
 }

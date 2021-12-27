@@ -35,7 +35,7 @@ public class HomeFragmentAdapter  extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position) {
         if(position == 0) return "LATEST";
         if(position == 1) return "MY AUCTIONS";
-        if(position == 2) return "MY PURCHING";
+        if(position == 2) return "MY PURCHASING";
 
         throw new IllegalStateException("Unexpected position " + position);
     }

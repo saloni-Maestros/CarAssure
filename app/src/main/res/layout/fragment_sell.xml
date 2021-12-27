@@ -9,7 +9,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@drawable/header_background"
+        android:background="@drawable/newheaderbg"
         android:id="@+id/relativefav">
         <ImageView
             android:id="@+id/iv_back"
@@ -32,73 +32,76 @@
         android:id="@+id/Relativematerialbtn"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:layout_marginEnd="3dp"
+        android:gravity="center_vertical"
         android:layout_below="@id/relativefav"
         android:orientation="horizontal"
         android:weightSum="5">
         <com.google.android.material.button.MaterialButton
             android:id="@+id/mbtn_all"
-            android:layout_width="50dp"
-            android:layout_height="45dp"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="7dp"
-            android:layout_marginEnd="7dp"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="5dp"
             android:padding="3dp"
             android:layout_weight="1"
-            android:backgroundTint="@color/red"
+            android:backgroundTint="@color/splashcolor"
             android:text="All"
-            android:textSize="10dp"
+            android:textAllCaps="false"
+            android:textSize="8dp"
             android:textColor="@color/white"
-            app:cornerRadius="40dp" />
+            app:cornerRadius="30dp" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/mbtn_live"
-            android:layout_width="50dp"
-            android:layout_height="45dp"
-            android:layout_gravity="center_vertical"
-            android:textSize="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:textSize="8dp"
             android:layout_weight="1"
+            android:layout_marginStart="5dp"
             android:backgroundTint="@color/white"
             android:text="Live"
-            android:textColor="@color/red"
-            app:cornerRadius="40dp" />
+            android:textAllCaps="false"
+            android:textColor="@color/splashcolor"
+            app:cornerRadius="30dp" />
         <com.google.android.material.button.MaterialButton
             android:id="@+id/mbtn_processing"
-            android:layout_width="92dp"
-            android:layout_height="45dp"
-            android:layout_gravity="center_vertical"
-            android:textSize="10dp"
-            android:layout_marginStart="7dp"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:textSize="8dp"
+            android:layout_marginStart="5dp"
             android:layout_weight="1"
             android:padding="3dp"
+            android:textAllCaps="false"
             android:backgroundTint="@color/white"
-            android:text="processing"
-            android:textColor="@color/red"
-            app:cornerRadius="40dp" />
+            android:text="Processing"
+            android:textColor="@color/splashcolor"
+            app:cornerRadius="30dp" />
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/mbtn_Expired"
-            android:layout_width="70dp"
-            android:layout_height="45dp"
-            android:layout_gravity="center_vertical"
-            android:textSize="10dp"
-            android:layout_marginStart="7dp"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="5dp"
             android:layout_weight="1"
             android:backgroundTint="@color/white"
             android:text="Expired"
-            android:textColor="@color/red"
-            app:cornerRadius="40dp" />
+            android:textAllCaps="false"
+            android:textColor="@color/splashcolor"
+            android:textSize="8dp"
+            app:cornerRadius="30dp" />
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/mbtn_Sold"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center_vertical"
-            android:textSize="10dp"
-            android:layout_marginStart="7dp"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:textSize="8dp"
+            android:layout_marginStart="5dp"
             android:layout_weight="1"
+            android:layout_marginEnd="5dp"
             android:backgroundTint="@color/white"
             android:text="Sold"
-            android:textColor="@color/red"
-            app:cornerRadius="40dp" />
+            android:textAllCaps="false"
+            android:textColor="@color/splashcolor"
+            app:cornerRadius="30dp" />
     </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycleViewAll"
@@ -128,7 +131,7 @@
             android:layout_alignParentBottom="true"
             android:layout_centerInParent="true"
             android:layout_marginBottom="40dp"
-            android:src="@drawable/addmore" />
+            android:src="@drawable/addmoreblue" />
     </RelativeLayout>
 
     <ProgressBar

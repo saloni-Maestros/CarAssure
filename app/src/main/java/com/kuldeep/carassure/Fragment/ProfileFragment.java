@@ -33,7 +33,7 @@ public class ProfileFragment extends Fragment {
     EditText et_currentpass, et_newpass, et_confirmpass;
     TextView txtEmail,txtName,txtMobile;
     MaterialButton mbtn_changepass;
-    String UserId = "",DisplayName="",EmailAddress="";
+    String UserId = "",DisplayName="",EmailAddress="", Name = "";
     ProgressBar progressBar;
 
     @Override
@@ -58,11 +58,15 @@ public class ProfileFragment extends Fragment {
         });
         UserId = SharedHelper.getKey(getActivity(), APPCONSTANT.user_Id);
         Log.e("userid", UserId);
-        DisplayName = SharedHelper.getKey(getActivity(), APPCONSTANT.DISPLAY_NAME);
-        txtName.setText(DisplayName);
+       /* DisplayName = SharedHelper.getKey(getActivity(), APPCONSTANT.DISPLAY_NAME);
+        txtName.setText(DisplayName);*/
         Log.e("dsadfsda", DisplayName );
         EmailAddress = SharedHelper.getKey(getActivity(), APPCONSTANT.EMAIL_ID);
         txtEmail.setText(EmailAddress);
+        Name = SharedHelper.getKey(getActivity(), APPCONSTANT.NAME);
+        txtName.setText(Name);
+
+
         Log.e("dsadfsda", EmailAddress );
         mbtn_changepass.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,7 +78,7 @@ public class ProfileFragment extends Fragment {
                 } else if (et_confirmpass.getText().toString().trim().isEmpty()) {
                     Toast.makeText(getContext(), "please enter confirm password", Toast.LENGTH_SHORT).show();
                 } else {
-                    profileDetails();
+                  //  profileDetails();
 
                 }
             }
@@ -106,6 +110,8 @@ public class ProfileFragment extends Fragment {
                                 if (response.getString("result").equals("true")) {
                                     Toast.makeText(getContext(), "" + response.getString("result"), Toast.LENGTH_SHORT).show();
                                     JSONObject jsonObject = new JSONObject(response.getString("data"));
+                                    txtName.setText(jsonObject.getString("name"));
+
 
                                 } else {
 

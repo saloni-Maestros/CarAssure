@@ -1,6 +1,7 @@
 package com.kuldeep.carassure.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -33,6 +34,8 @@ import com.bumptech.glide.request.target.Target;
 import com.bumptech.glide.request.transition.Transition;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.slider.Slider;
+import com.kuldeep.carassure.Activity.CarDeatilsActivity;
+import com.kuldeep.carassure.Activity.SellCarDeatilsActivity;
 import com.kuldeep.carassure.Model.SellModel;
 import com.kuldeep.carassure.Model.SliderModel;
 import com.kuldeep.carassure.Model.SliderSellModel;
@@ -88,7 +91,16 @@ ProgressBar progressBar;
           //  Log.e("rdgfghgf", sellModel.getUser_id());
             User_Id = SharedHelper.getKey(context, APPCONSTANT.user_Id);
             Log.e("tytfytyu", User_Id);
-
+            holder.r2Main.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    SharedHelper.putkey(context, APPCONSTANT.ID, sellModel.getId());
+                    Log.e("rtgtdgdfgfg", sellModel.getId());
+                    Intent intent = new Intent(context, SellCarDeatilsActivity.class);  //adapter to activity
+                    intent.putExtra("your_extra", "your_class_value");
+                    context.startActivity(intent);
+                }
+            });
             holder.tv_CarName1.setText(sellModel.getName());
             holder.tv_Carprice.setText(sellModel.getPrice());
             holder.tv_Location.setText(sellModel.getLocation());
@@ -125,7 +137,7 @@ ProgressBar progressBar;
         ImageView iv_img,img_logo;
         TextView tv_CarName1,tv_Carprice,tv_Location,tv_kilometer,tv_modelNum,tv_automaticee,tv_Accential,tv_carNum;
         MaterialButton btn_edit;
-        RelativeLayout relativelayout,recycleViewAll;
+        RelativeLayout relativelayout,recycleViewAll,r2Main;
         Adapter MultipleImageAdapter;
         ProgressBar progressBar;
         SliderView sliderView,img_slider1;
@@ -143,7 +155,8 @@ ProgressBar progressBar;
             btn_edit = itemView.findViewById(R.id.btn_edit);
             iv_img = itemView.findViewById(R.id.iv_img);
             img_logo = itemView.findViewById(R.id.img_logo);
-         //   sliderView = itemView.findViewById(R.id.img_slider1);
+            r2Main = itemView.findViewById(R.id.r2Main);
+        //   sliderView = itemView.findViewById(R.id.img_slider1);
          //   img_slider1 = itemView.findViewById(R.id.img_slider1);
            // sliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
 

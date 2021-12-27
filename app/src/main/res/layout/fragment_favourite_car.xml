@@ -9,7 +9,7 @@
    <RelativeLayout
        android:layout_width="match_parent"
        android:layout_height="60dp"
-       android:background="@drawable/header_background"
+       android:background="@drawable/newheaderbg"
        android:id="@+id/relativefav">
       <ImageView
           android:id="@+id/iv_back"
@@ -41,7 +41,7 @@
        style="?android:attr/progressBarStyleLarge"
        android:layout_width="50dp"
        android:layout_height="50dp"
-       android:layout_centerHorizontal="true"
+      android:layout_centerInParent="true"
        android:indeterminateDrawable="@drawable/progressbar"
        android:visibility="gone">
    </ProgressBar>
